@@ -19,17 +19,91 @@
   font-style: normal;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-blue: hsl(214, 50%, 50%);
+  --color-grey: hsl(213, 16%, 22%);
+  --color-white: hsl(0, 0%, 100%);
+  --text-large: calc(var(--text-body) * 2.25);
+  --text-medium: calc(var(--text-body) * 1.75);
+  --text-small: calc(var(--text-body) * 1.375);
+  --text-body: 1.6rem;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100%;
+}
+
 * {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
-  color: #4078c0;
-  margin: 0;
+  color: var(--color-blue);
   font-weight: bold;
+  font-size: var(--text-large);
+  line-height: var(--text-large);
+}
+
+h2 {
+  color: var(--color-blue);
+  font-size: var(--text-medium);
+  line-height: var(--text-medium);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: var(--text-small);
+  line-height: var(--text-small);
+  font-weight: bold;
+}
+
+p {
+  font-size: var(--text-body);
+  line-height: var(--text-body);
+  color: var(--color-grey);
+}
+
+a {
+  color: currentColor;
 }
 
 hr {
   border: 1px solid #ededed;
+}
+
+main {
+  padding: 1.6rem;
+  max-height: calc(100% - var(--text-large) - 2px);
+  overflow-y: auto;
+}
+
+form[role="login"] {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  background-color: var(--color-grey);
+  color: var(--color-white);
+  font-size: var(--text-body);
+  border-radius: .5rem;
+}
+
+form[role="login"] > label,
+form[role="login"] > a,
+form[role="login"] > button {
+  text-transform: uppercase;
+}
+
+form[role="login"] > input {
+  appearance: none;
 }
