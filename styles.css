@@ -27,6 +27,7 @@ html {
   --color-blue: hsl(214, 50%, 50%);
   --color-grey: hsl(213, 16%, 22%);
   --color-white: hsl(0, 0%, 100%);
+  --color-background: rgba(45, 55, 104, 0.55);
   --text-large: calc(var(--text-body) * 2.25);
   --text-medium: calc(var(--text-body) * 1.75);
   --text-small: calc(var(--text-body) * 1.375);
@@ -59,7 +60,7 @@ h2 {
   font-size: var(--text-medium);
   line-height: var(--text-medium);
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 
 h3 {
@@ -88,22 +89,72 @@ main {
   overflow-y: auto;
 }
 
+/*-------------
+--Form Styles--
+-------------*/
 form[role="login"] {
+  width: 85%;
+  max-width: 330px;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  padding: 1.6rem;
-  background-color: var(--color-grey);
+  background-color: var(--color-background);
   color: var(--color-white);
   font-size: var(--text-body);
   border-radius: .5rem;
 }
 
-form[role="login"] > label,
-form[role="login"] > a,
-form[role="login"] > button {
+form[role="login"] > h2 {
+  color: inherit;
   text-transform: uppercase;
+  position: relative;
 }
 
+form[role="login"] > h2::after {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  background: var(--color-blue);
+}
+
+form[role="login"] > label,
+form[role="login"] > a,
+form[role="login"] > button,
 form[role="login"] > input {
+  text-transform: capitalize;
+  padding: .65rem;
+}
+
+form[role="login"] > label {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+form[role="login"] > input,
+form[role="login"] > button {
+  background: #6A7591;
+  color: inherit;
+  border: 0;
+  border-radius: .25rem;
+  margin: 0 0 1rem 0;
+}
+
+form[role="login"] > input:focus {
+  outline: none;
+}
+
+form[role="login"] > input,
+form[role="login"] > button {
   appearance: none;
+}
+
+form[role="login"] > button {
+  background: var(--color-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--text-body);
+  margin: 2rem 0 0 0;
 }
