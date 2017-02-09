@@ -320,9 +320,54 @@ nav[title="progress"] li:last-of-type:hover {
   background: #dfdfdf;
 }
 
+/*---------------
+--Rating Styles--
+---------------*/
+fieldset {
+  border: 1px solid var(--color-blue);
+}
+
+fieldset > legend {
+  padding: 1rem;
+  margin-left: .5rem;
+  font-size: var(--text-small);
+  color: var(--color-blue);
+}
+
+fieldset > section {
+  display: flex;
+}
+
+fieldset > section > * {
+  flex: 1;
+}
+
+label[for^="rating"] {
+  text-align: center;
+  font-size: var(--text-body);
+  transition: .3s all ease-in-out;
+}
+
+input[name="rating"] {
+  display: none;
+}
+
+fieldset svg {
+  width: 5rem;
+  filter: grayscale(100%);
+}
+
+fieldset svg:hover {
+  filter: grayscale(70%);
+}
+
+input[name="rating"]:checked + label > svg {
+  filter: grayscale(0);
+}
+
 /*--------------------
 --Media Query Styles--
----------------------*/
+--------------------*/
 @media (orientation: portrait) {
   img[data-orientation="portrait"] {
     height: initial;
