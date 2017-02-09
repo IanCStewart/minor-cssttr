@@ -116,9 +116,13 @@ body > h1 {
 }
 
 main {
-  padding: 1.6rem;
   max-height: calc(100% - var(--text-large) - 2px);
   overflow-y: auto;
+}
+
+main > div {
+  padding: 2.5rem;
+  background: rgb(251, 251, 251);
 }
 
 /*-------------
@@ -281,6 +285,7 @@ figure footer {
 nav[title="progress"] {
   width: 100%;
   max-width: 60rem;
+  background: var(--color-white);
 }
 
 nav[title="progress"] > h1 {
