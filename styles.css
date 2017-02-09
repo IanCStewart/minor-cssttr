@@ -1,0 +1,473 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Light.ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-blue: hsl(214, 50%, 50%);
+  --color-grey: hsl(213, 16%, 22%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-background: rgba(45, 55, 104, 0.55);
+  --main-shadow: 0 0 1.5rem 0 var(--color-grey);
+  --text-large: calc(var(--text-body) * 2.25);
+  --text-medium: calc(var(--text-body) * 1.75);
+  --text-small: calc(var(--text-body) * 1.375);
+  --text-body: 1.6rem;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100%;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: var(--color-blue);
+  font-weight: bold;
+  font-size: var(--text-large);
+  line-height: var(--text-large);
+}
+
+h2 {
+  color: var(--color-blue);
+  font-size: var(--text-medium);
+  line-height: var(--text-medium);
+  font-weight: bold;
+  margin: 1.4rem 0;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: var(--text-small);
+  line-height: var(--text-small);
+  font-weight: bold;
+}
+
+p {
+  font-size: var(--text-body);
+  line-height: var(--text-body);
+  color: var(--color-grey);
+}
+
+p + p {
+  margin: 1rem 0;
+}
+
+a {
+  color: currentColor;
+}
+
+ul,
+li {
+  list-style: none;
+  font-size: var(--text-body);
+}
+
+input:not([type="checkbox"]),
+button,
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+hr {
+  border: 1px solid #ededed;
+}
+
+body > h1 {
+  padding: 0 1.6rem;
+}
+
+main {
+  padding: 1.6rem;
+  max-height: calc(100% - var(--text-large) - 2px);
+  overflow-y: auto;
+}
+
+/*-------------
+--Form Styles--
+-------------*/
+form[role="login"] {
+  max-width: 330px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  color: var(--color-white);
+  font-size: var(--text-body);
+  border-radius: .5rem;
+  box-shadow: var(--main-shadow);
+}
+
+form[role="login"] > h2 {
+  color: inherit;
+  text-transform: uppercase;
+  position: relative;
+}
+
+form[role="login"] > h2::after {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  background: var(--color-blue);
+}
+
+form[role="login"] > label,
+form[role="login"] > a,
+form[role="login"] > button,
+form[role="login"] > input {
+  text-transform: capitalize;
+  padding: .65rem;
+}
+
+form[role="login"] > label {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+form[role="login"] > input,
+form[role="login"] > button {
+  background: #6A7591;
+  color: inherit;
+  border: 0;
+  border-radius: .25rem;
+  margin: 0 0 1rem 0;
+}
+
+form[role="login"] > label[for*="stay"] {
+  display: flex;
+  align-items: center;
+}
+
+form[role="login"] > label[for*="stay"] > input {
+  margin-right: .65rem;
+}
+
+form[role="login"] > button {
+  background: var(--color-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--text-body);
+  margin: 2rem 0 0 0;
+}
+
+/*-------------------
+--Navagation Styles--
+-------------------*/
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  max-width: 25rem;
+  box-shadow: var(--main-shadow);
+}
+
+nav a {
+  padding: 1.6rem;
+  display: block;
+  text-decoration: none;
+  background: var(--color-white);
+  transition: .3s all ease-in-out;
+}
+
+nav a:hover {
+  background: #dfdfdf;
+}
+
+nav li > ul a {
+  padding-left: 3rem;
+}
+
+nav li > ul a:hover {
+  background: #efefef;
+}
+
+/*----------------------------------------
+--Picture with subtitle Component Styles--
+----------------------------------------*/
+figure {
+  position: relative;
+  max-width: 62.5rem;
+}
+
+figure > img {
+  max-width: 100%;
+}
+
+img[data-orientation="portrait"] {
+  height: 0;
+  display: none;
+}
+
+figure > figcaption {
+  font-size: var(--text-body);
+  color: var(--color-white);
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  padding: .65rem;
+  background: var(--color-background);
+}
+
+figure p {
+  color: currentColor;
+}
+
+figure footer {
+  opacity: .5;
+  font-size: 1.2rem;
+}
+
+/*-------------------
+--Media item Styles--
+--------------------*/
+.media-item {
+  max-width: 60rem;
+}
+
+.media-item > h1 {
+  font-size: var(--text-small);
+}
+
+.media-item > img {
+  float: left;
+  margin-right: 1rem;
+  max-width: 100%;
+}
+
+/*-----------------
+--Progress Styles--
+-----------------*/
+nav[title="progress"] {
+  width: 100%;
+  max-width: 60rem;
+}
+
+nav[title="progress"] > h1 {
+  width: 100%;
+  font-size: var(--text-small);
+  padding: 1rem;
+}
+
+nav[title="progress"] > progress {
+  width: calc(100% - 2rem);
+  height: 2rem;
+  margin: 1rem;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background: linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+	  linear-gradient(to bottom, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+	  linear-gradient(to right, #09c, #a2d686);
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+nav[title="progress"] li:nth-of-type(3),
+nav[title="progress"] li:last-of-type {
+  background: var(--color-white);
+  transition: .3s all ease-in-out;
+  padding: 1.6rem;
+}
+
+nav[title="progress"] li:nth-of-type(3):hover,
+nav[title="progress"] li:last-of-type:hover {
+  background: #dfdfdf;
+}
+
+/*---------------
+--Rating Styles--
+---------------*/
+fieldset {
+  border: 1px solid var(--color-blue);
+  max-width: 40rem;
+}
+
+fieldset > legend {
+  padding: 1rem;
+  margin-left: .5rem;
+  font-size: var(--text-small);
+  color: var(--color-blue);
+}
+
+fieldset > section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: .5rem;
+}
+
+fieldset > section > * {
+  flex: 1;
+}
+
+label[for^="rating"] {
+  text-align: center;
+  font-size: var(--text-body);
+  max-width: 7rem;
+}
+
+input[name="rating"] {
+  display: none;
+}
+
+fieldset svg {
+  width: 5rem;
+  filter: grayscale(100%);
+  transition: .3s all ease-in-out;
+}
+
+fieldset svg:hover {
+  filter: grayscale(70%);
+}
+
+input[name="rating"]:checked + label > svg {
+  filter: grayscale(0);
+}
+
+/*-------------
+--Chat Styles--
+-------------*/
+.chat {
+  max-width: 70rem;
+}
+
+.chat > article {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: url('./assets/img/chat-background.jpg');
+}
+
+.chat > article > section {
+  margin: 1rem;
+  max-width: 80%;
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-radius: .5rem;
+  font-size: var(--text-body);
+  align-self: flex-start;
+}
+
+.chat header {
+  padding: .5rem 0 .5rem;
+  margin-bottom: .5rem;
+  background: #86aed6;
+  border-radius: .5rem .5rem 0 0;
+  font-size: 1.2rem;
+}
+
+.chat p {
+  color: currentColor;
+  padding: 0 1rem;
+  font-size: inherit;
+}
+
+.chat section:nth-of-type(2) {
+  background: #5aa86f;
+  padding-bottom: .5rem;
+  align-self: flex-end;
+}
+
+.chat section:nth-last-of-type(2) header {
+  background: #a2d686;
+}
+
+.chat footer {
+  padding-bottom: .5rem;
+  text-align: right;
+  opacity: .75;
+  font-size: 1.2rem;
+}
+
+.chat form {
+  width: 100%;
+  height: calc(var(--text-body) + 2rem);
+  font-size: var(--text-body);
+  position: relative;
+}
+
+.chat textarea {
+  resize: none;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  padding: .8rem;
+  padding-right: 4rem;
+  font-size: inherit;
+}
+
+.chat button {
+  position: absolute;
+  background: none;
+  border: 0;
+  color: var(--color-blue);
+  font-size: inherit;
+  right: 1rem;
+  top: .8rem;
+}
+
+/*--------------------
+--Media Query Styles--
+--------------------*/
+@media (orientation: portrait) {
+  img[data-orientation="portrait"] {
+    height: initial;
+    display: block;
+  }
+
+  img[data-orientation="landscape"] {
+    height: 0;
+    display: none;
+  }
+
+  figure > figcaption {
+    bottom: 0;
+  }
+}
