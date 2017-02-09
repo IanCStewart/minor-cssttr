@@ -28,6 +28,7 @@ html {
   --color-grey: hsl(213, 16%, 22%);
   --color-white: hsl(0, 0%, 100%);
   --color-background: rgba(45, 55, 104, 0.55);
+  --main-shadow: 0 0 1.5rem 0 var(--color-grey);
   --text-large: calc(var(--text-body) * 2.25);
   --text-medium: calc(var(--text-body) * 1.75);
   --text-small: calc(var(--text-body) * 1.375);
@@ -60,7 +61,11 @@ h2 {
   font-size: var(--text-medium);
   line-height: var(--text-medium);
   font-weight: bold;
-  margin-bottom: 1.4rem;
+  margin: 1.4rem 0;
+}
+
+h2:first-of-type {
+  margin-top: 0;
 }
 
 h3 {
@@ -79,8 +84,28 @@ a {
   color: currentColor;
 }
 
+ul,
+li {
+  list-style: none;
+  font-size: var(--text-body);
+}
+
+input,
+button {
+  appearance: none;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
 hr {
   border: 1px solid #ededed;
+}
+
+body > h1 {
+  padding: 0 1.6rem;
 }
 
 main {
@@ -93,7 +118,6 @@ main {
 --Form Styles--
 -------------*/
 form[role="login"] {
-  width: 85%;
   max-width: 330px;
   padding: 3rem;
   display: flex;
@@ -102,6 +126,7 @@ form[role="login"] {
   color: var(--color-white);
   font-size: var(--text-body);
   border-radius: .5rem;
+  box-shadow: var(--main-shadow);
 }
 
 form[role="login"] > h2 {
@@ -142,13 +167,13 @@ form[role="login"] > button {
   margin: 0 0 1rem 0;
 }
 
-form[role="login"] > input:focus {
-  outline: none;
+form[role="login"] > label[for*="stay"] {
+  display: flex;
+  align-items: center;
 }
 
-form[role="login"] > input,
-form[role="login"] > button {
-  appearance: none;
+form[role="login"] > label[for*="stay"] > input {
+  margin-right: .65rem;
 }
 
 form[role="login"] > button {
@@ -157,4 +182,35 @@ form[role="login"] > button {
   font-weight: bold;
   font-size: var(--text-body);
   margin: 2rem 0 0 0;
+}
+
+/*-------------------
+--Navagation Styles--
+-------------------*/
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  max-width: 25rem;
+  box-shadow: var(--main-shadow);
+}
+
+nav a {
+  padding: 1.6rem;
+  display: block;
+  text-decoration: none;
+  background: var(--color-white);
+  transition: .3s all ease-in-out;
+}
+
+nav a:hover {
+  background: #dfdfdf;
+}
+
+nav li > ul a {
+  padding-left: 3rem;
+}
+
+nav li > ul a:hover {
+  background: #efefef;
 }
