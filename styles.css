@@ -214,3 +214,60 @@ nav li > ul a {
 nav li > ul a:hover {
   background: #efefef;
 }
+
+/*----------------------------------------
+--Picture with subtitle Component Styles--
+----------------------------------------*/
+figure {
+  position: relative;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+figure > img {
+  max-width: 100%;
+}
+
+img[data-orientation="portrait"] {
+  height: 0;
+  display: none;
+}
+
+figure > figcaption {
+  font-size: var(--text-body);
+  color: var(--color-white);
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  padding: .65rem;
+  background: var(--color-background);
+}
+
+figure p {
+  color: currentColor;
+}
+
+figure footer {
+  opacity: .5;
+  font-size: 1.2rem;
+}
+
+
+/*--------------------
+--Media Query Styles--
+---------------------*/
+@media (orientation: portrait) {
+  img[data-orientation="portrait"] {
+    height: initial;
+    display: block;
+  }
+
+  img[data-orientation="landscape"] {
+    height: 0;
+    display: none;
+  }
+
+  figure > figcaption {
+    bottom: 0;
+  }
+}
