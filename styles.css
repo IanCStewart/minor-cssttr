@@ -80,6 +80,10 @@ p {
   color: var(--color-grey);
 }
 
+p + p {
+  margin: 1rem 0;
+}
+
 a {
   color: currentColor;
 }
@@ -90,7 +94,7 @@ li {
   font-size: var(--text-body);
 }
 
-input,
+input:not([type="checkbox"]),
 button,
 progress {
   -webkit-appearance: none;
