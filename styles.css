@@ -325,6 +325,7 @@ nav[title="progress"] li:last-of-type:hover {
 ---------------*/
 fieldset {
   border: 1px solid var(--color-blue);
+  max-width: 40rem;
 }
 
 fieldset > legend {
@@ -336,6 +337,9 @@ fieldset > legend {
 
 fieldset > section {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: .5rem;
 }
 
 fieldset > section > * {
@@ -345,7 +349,7 @@ fieldset > section > * {
 label[for^="rating"] {
   text-align: center;
   font-size: var(--text-body);
-  transition: .3s all ease-in-out;
+  max-width: 7rem;
 }
 
 input[name="rating"] {
@@ -355,6 +359,7 @@ input[name="rating"] {
 fieldset svg {
   width: 5rem;
   filter: grayscale(100%);
+  transition: .3s all ease-in-out;
 }
 
 fieldset svg:hover {
