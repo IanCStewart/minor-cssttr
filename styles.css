@@ -27,6 +27,9 @@ html {
   --color-blue: hsl(214, 50%, 50%);
   --color-grey: hsl(213, 16%, 22%);
   --color-white: hsl(0, 0%, 100%);
+  --color-green: #516B5E;
+  --color-pink: #DD7F77;
+  --color-beige: #F8F3DF;
   --color-background: rgba(45, 55, 104, 0.55);
   --main-shadow: 0 0 1.5rem 0 var(--color-grey);
   --text-large: calc(var(--text-body) * 2.25);
