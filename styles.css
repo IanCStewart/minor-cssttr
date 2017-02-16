@@ -104,10 +104,15 @@ progress {
   appearance: none;
 }
 
+input,
+button {
+  transition: all .3s ease-in-out;
+}
+
 input:focus,
-button:focus,
-textarea:focus {
+button:focus {
   outline: none;
+  transform: scale(1.1);
 }
 
 hr {
