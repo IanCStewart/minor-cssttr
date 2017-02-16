@@ -131,10 +131,13 @@ main {
   overflow-y: auto;
 }
 
+/* XXX: prefix for flex needed for older browsers as found at caniuse.com */
 main > div {
   padding: 2.5rem;
   width: 100%;
   min-height: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -157,6 +160,8 @@ form[name="login"] {
   max-width: 330px;
   width: 100%;
   padding: 3rem;
+  display: -webkit-flex;
+  display: -ms-flex;
   display: flex;
   flex-direction: column;
   background-color: var(--color-grey);
@@ -205,6 +210,8 @@ form[name="login"] > button {
 }
 
 form[name="login"] > label[for*="stay"] {
+  display: -webkit-flex;
+  display: -ms-flex;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -254,6 +261,8 @@ form[name="login"] > button {
 --Navagation Styles--
 -------------------*/
 nav {
+  display: -webkit-flex;
+  display: -ms-flex;
   display: flex;
   flex-direction: column;
   width: 85%;
@@ -261,7 +270,7 @@ nav {
   box-shadow: var(--main-shadow);
 }
 
-nav a {
+nav ul a {
   padding: 1.6rem;
   display: block;
   text-decoration: none;
@@ -269,7 +278,7 @@ nav a {
   transition: .3s all ease-in-out;
 }
 
-nav a:hover {
+nav ul a:hover {
   background: #dfdfdf;
 }
 
@@ -403,16 +412,36 @@ progress[value]::-moz-progress-value {
   border: none;
 }
 
-nav[title="progress"] li:nth-of-type(3),
-nav[title="progress"] li:last-of-type {
-  background: var(--color-white);
-  transition: .3s all ease-in-out;
-  padding: 1.6rem;
+nav[title="progress"] ol {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+  margin-bottom: 1.6rem;
 }
 
-nav[title="progress"] li:nth-of-type(3):hover,
-nav[title="progress"] li:last-of-type:hover {
-  background: #dfdfdf;
+nav[title="progress"] a {
+  text-decoration: none;
+}
+
+nav[title="progress"] li{
+  position: relative;
+  text-align: center;
+  font-size: var(--text-xs)
+}
+
+nav[title="progress"] li::before {
+  content: attr(value);
+  position: absolute;
+  top: -3.4rem;
+  left: calc(50% - 1.1rem);
+  font-size: var(--text-xs);
+  line-height: var(--text-xs);
+  padding: 0.55rem .75rem;
+  background: var(--color-grey);
+  color: var(--color-white);
+  border-radius: 100%;
 }
 
 /*---------------
@@ -435,6 +464,8 @@ fieldset > legend {
 }
 
 fieldset > section {
+  display: -webkit-flex;
+  display: -ms-flex;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -479,6 +510,8 @@ input[name="rating"]:checked + label > svg {
 }
 
 .chat > article {
+  display: -webkit-flex;
+  display: -ms-flex;
   display: flex;
   flex-direction: column;
   padding: 1rem;
