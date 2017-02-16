@@ -566,6 +566,10 @@ input[name="rating"]:checked + label > svg {
   position: relative;
 }
 
+.chat label {
+  display: none;
+}
+
 .chat textarea {
   resize: none;
   height: 100%;
