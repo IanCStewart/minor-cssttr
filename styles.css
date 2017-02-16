@@ -266,14 +266,45 @@ form[name="login"] > button {
 /*-------------------
 --Navagation Styles--
 -------------------*/
+.side-nav {
+  position: relative;
+}
+
+.side-nav label {
+  position: absolute;
+  top: 25%;
+  left: 2.5rem;
+  font-size: var(--text-medium);
+  line-height: var(--text-medium);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.side-nav input {
+  display: none;
+}
+
+.side-nav input:checked + label {
+  transform: rotate(90deg);
+  left: 26.5rem;
+}
+
 nav {
+  align-self: flex-start;
+  position: relative;
+  left: -28.5rem;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
   max-width: 25rem;
   box-shadow: var(--main-shadow);
+  transition: all .3s ease-in-out;
+}
+
+.side-nav input:checked ~ nav {
+  left: -2.5rem;
 }
 
 nav ul a {
@@ -294,6 +325,16 @@ nav li > ul a {
 
 nav li > ul a:hover {
   background: #efefef;
+}
+
+@media (min-width: 550px) {
+  .side-nav label {
+    display: none;
+  }
+
+  nav {
+    left: -2.5rem;
+  }
 }
 
 /*----------------------------------------
