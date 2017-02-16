@@ -27,12 +27,16 @@ html {
   --color-blue: hsl(214, 50%, 50%);
   --color-grey: hsl(213, 16%, 22%);
   --color-white: hsl(0, 0%, 100%);
-  --color-background: rgba(45, 55, 104, 0.55);
+  --color-green: #516B5E;
+  --color-pink: #DD7F77;
+  --color-beige: #F8F3DF;
+  --color-background: hsla(213, 16%, 22%, .75);
   --main-shadow: 0 0 1.5rem 0 var(--color-grey);
   --text-large: calc(var(--text-body) * 2.25);
   --text-medium: calc(var(--text-body) * 1.75);
   --text-small: calc(var(--text-body) * 1.375);
   --text-body: 1.6rem;
+  --text-xs: 1.2rem;
 }
 
 html,
@@ -50,14 +54,13 @@ body {
 }
 
 h1 {
-  color: var(--color-blue);
   font-weight: bold;
   font-size: var(--text-large);
   line-height: var(--text-large);
 }
 
 h2 {
-  color: var(--color-blue);
+  color: var(--color-white);
   font-size: var(--text-medium);
   line-height: var(--text-medium);
   font-weight: bold;
@@ -85,6 +88,7 @@ p + p {
 }
 
 a {
+  pointer: hand;
   color: currentColor;
 }
 
@@ -101,10 +105,15 @@ progress {
   appearance: none;
 }
 
+input,
+button {
+  transition: all .3s ease-in-out;
+}
+
 input:focus,
-button:focus,
-textarea:focus {
+button:focus {
   outline: none;
+  transform: scale(1.1);
 }
 
 hr {
@@ -112,41 +121,58 @@ hr {
 }
 
 body > h1 {
-  padding: 0 1.6rem;
+  padding: 1.6rem 1rem;
+  color: var(--color-white);
+  background-color: var(--color-grey);
 }
 
 main {
-  max-height: calc(100% - var(--text-large) - 2px);
+  height: calc(100% - 6.8rem);
   overflow-y: auto;
 }
 
 main > div {
   padding: 2.5rem;
-  background: rgb(251, 251, 251);
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-green);
+}
+
+main > div:nth-of-type(2n) {
+  background: var(--color-pink);
 }
 
 /*-------------
 --Form Styles--
 -------------*/
-form[role="login"] {
+form[name="login"] {
   max-width: 330px;
+  width: 100%;
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-background);
+  background-color: var(--color-grey);
   color: var(--color-white);
   font-size: var(--text-body);
-  border-radius: .5rem;
+  border-radius: .25rem;
   box-shadow: var(--main-shadow);
 }
 
-form[role="login"] > h2 {
+form[name="login"] > h2 {
   color: inherit;
   text-transform: uppercase;
   position: relative;
 }
 
-form[role="login"] > h2::after {
+form[name="login"] > h2::after {
   content: '';
   width: 2rem;
   height: 2px;
@@ -156,21 +182,21 @@ form[role="login"] > h2::after {
   background: var(--color-blue);
 }
 
-form[role="login"] > label,
-form[role="login"] > a,
-form[role="login"] > button,
-form[role="login"] > input {
+form[name="login"] > label,
+form[name="login"] > a,
+form[name="login"] > button,
+form[name="login"] > input {
   text-transform: capitalize;
   padding: .65rem;
 }
 
-form[role="login"] > label {
+form[name="login"] > label {
   padding-top: 0;
   padding-right: 0;
 }
 
-form[role="login"] > input,
-form[role="login"] > button {
+form[name="login"] > input,
+form[name="login"] > button {
   background: #6A7591;
   color: inherit;
   border: 0;
@@ -178,16 +204,16 @@ form[role="login"] > button {
   margin: 0 0 1rem 0;
 }
 
-form[role="login"] > label[for*="stay"] {
+form[name="login"] > label[for*="stay"] {
   display: flex;
   align-items: center;
 }
 
-form[role="login"] > label[for*="stay"] > input {
+form[name="login"] > label[for*="stay"] > input {
   margin-right: .65rem;
 }
 
-form[role="login"] > button {
+form[name="login"] > button {
   background: var(--color-blue);
   text-transform: uppercase;
   font-weight: bold;
@@ -232,6 +258,8 @@ nav li > ul a:hover {
 figure {
   position: relative;
   max-width: 62.5rem;
+  border-radius: .25rem;
+  overflow: hidden;
 }
 
 figure > img {
@@ -251,6 +279,9 @@ figure > figcaption {
   left: 0;
   padding: .65rem;
   background: var(--color-background);
+  border-radius: 0 0 .25rem .25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 figure p {
@@ -266,17 +297,35 @@ figure footer {
 --Media item Styles--
 --------------------*/
 .media-item {
+  position: relative;
   max-width: 60rem;
+  padding: 2rem;
+  background: var(--color-white);
+  border-radius: .25rem;
+  box-sizing: border-box;
 }
 
-.media-item > h1 {
-  font-size: var(--text-small);
+.media-item h1 {
+  font-size: var(--text-medium);
+}
+
+.media-item a {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .media-item > img {
   float: left;
   margin-right: 1rem;
   max-width: 100%;
+}
+
+.media-item p + p {
+  margin-bottom: 0;
 }
 
 /*-----------------
@@ -294,24 +343,35 @@ nav[title="progress"] > h1 {
   padding: 1rem;
 }
 
-nav[title="progress"] > progress {
-  width: calc(100% - 2rem);
-  height: 2rem;
-  margin: 1rem;
+nav[title="progress"] progress {
+  width: calc(100% - 4rem);
+  margin: 2rem;
+  height: .5rem;
 }
 
+/* XXX: This is some nasty shit but progress is not a browser friendly tag */
 progress[value]::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  background-color: var(--color-pink);
+  border-radius: .2rem;
+  border: none;
 }
 
 progress[value]::-webkit-progress-value {
-  background: linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
-	  linear-gradient(to bottom, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
-	  linear-gradient(to right, #09c, #a2d686);
-  border-radius: 2px;
-  background-size: 35px 20px, 100% 100%, 100% 100%;
+  background-color: var(--color-green);
+  border-radius: .2rem;
+  border: none;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: var(--color-pink);
+  border-radius: .2rem;
+  border: none;
+}
+
+progress[value]::-moz-progress-value {
+  background-color: var(--color-green);
+  border-radius: .2rem;
+  border: none;
 }
 
 nav[title="progress"] li:nth-of-type(3),
@@ -330,22 +390,26 @@ nav[title="progress"] li:last-of-type:hover {
 --Rating Styles--
 ---------------*/
 fieldset {
-  border: 1px solid var(--color-blue);
+  border: 0;
   max-width: 40rem;
+  background: var(--color-white);
+  border-radius: .25rem;
 }
 
 fieldset > legend {
+  float: left;
+  width: 100%;
   padding: 1rem;
-  margin-left: .5rem;
+  margin-left: 0;
   font-size: var(--text-small);
-  color: var(--color-blue);
+  font-weight: bold;
 }
 
 fieldset > section {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: .5rem;
+  padding: 2rem;
 }
 
 fieldset > section > * {
@@ -354,8 +418,9 @@ fieldset > section > * {
 
 label[for^="rating"] {
   text-align: center;
-  font-size: var(--text-body);
+  font-size: var(--text-xs);
   max-width: 7rem;
+  color: var(--color-background);
 }
 
 input[name="rating"] {
@@ -380,6 +445,7 @@ input[name="rating"]:checked + label > svg {
 --Chat Styles--
 -------------*/
 .chat {
+  width: 100%;
   max-width: 70rem;
 }
 
