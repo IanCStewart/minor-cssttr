@@ -43,14 +43,22 @@ html,
 body {
   width: 100vw;
   height: 100%;
+  margin: 0;
 }
 
 * {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 h1 {
@@ -116,10 +124,6 @@ button:focus {
   transform: scale(1.1);
 }
 
-hr {
-  border: 1px solid #ededed;
-}
-
 body > h1 {
   padding: 1.6rem 1rem;
   color: var(--color-white);
@@ -147,6 +151,7 @@ main > div {
   justify-content: center;
   align-items: center;
   background: var(--color-green);
+  box-sizing: border-box;
 }
 
 main > div:nth-of-type(2n) {
@@ -169,6 +174,7 @@ form[name="login"] {
   font-size: var(--text-body);
   border-radius: .25rem;
   box-shadow: var(--main-shadow);
+  box-sizing: border-box;
 }
 
 form[name="login"] > h2 {
@@ -260,14 +266,45 @@ form[name="login"] > button {
 /*-------------------
 --Navagation Styles--
 -------------------*/
+.side-nav {
+  position: relative;
+}
+
+.side-nav label {
+  position: absolute;
+  top: 25%;
+  left: 2.5rem;
+  font-size: var(--text-medium);
+  line-height: var(--text-medium);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.side-nav input {
+  display: none;
+}
+
+.side-nav input:checked + label {
+  transform: rotate(90deg);
+  left: 26.5rem;
+}
+
 nav {
+  align-self: flex-start;
+  position: relative;
+  left: -28.5rem;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
   max-width: 25rem;
   box-shadow: var(--main-shadow);
+  transition: all .3s ease-in-out;
+}
+
+.side-nav input:checked ~ nav {
+  left: -2.5rem;
 }
 
 nav ul a {
@@ -288,6 +325,16 @@ nav li > ul a {
 
 nav li > ul a:hover {
   background: #efefef;
+}
+
+@media (min-width: 550px) {
+  .side-nav label {
+    display: none;
+  }
+
+  nav {
+    left: -2.5rem;
+  }
 }
 
 /*----------------------------------------
@@ -313,7 +360,7 @@ figure > figcaption {
   font-size: var(--text-body);
   color: var(--color-white);
   position: absolute;
-  bottom: 3px;
+  bottom: 2px;
   left: 0;
   padding: .65rem;
   background: var(--color-background);
@@ -379,6 +426,7 @@ nav[title="progress"] > h1 {
   width: 100%;
   font-size: var(--text-small);
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 nav[title="progress"] progress {
@@ -419,6 +467,7 @@ nav[title="progress"] ol {
   justify-content: space-around;
   padding: 0 2rem;
   margin-bottom: 1.6rem;
+  box-sizing: border-box;
 }
 
 nav[title="progress"] a {
@@ -448,6 +497,8 @@ nav[title="progress"] li::before {
 --Rating Styles--
 ---------------*/
 fieldset {
+  margin: 0;
+  padding: 0;
   border: 0;
   max-width: 40rem;
   background: var(--color-white);
@@ -461,6 +512,7 @@ fieldset > legend {
   margin-left: 0;
   font-size: var(--text-small);
   font-weight: bold;
+  box-sizing: border-box;
 }
 
 fieldset > section {
@@ -578,6 +630,7 @@ input[name="rating"]:checked + label > svg {
   padding: .8rem;
   padding-right: 4rem;
   font-size: inherit;
+  box-sizing: border-box;
 }
 
 .chat button {
