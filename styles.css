@@ -270,7 +270,7 @@ nav {
   box-shadow: var(--main-shadow);
 }
 
-nav a {
+nav ul a {
   padding: 1.6rem;
   display: block;
   text-decoration: none;
@@ -278,7 +278,7 @@ nav a {
   transition: .3s all ease-in-out;
 }
 
-nav a:hover {
+nav ul a:hover {
   background: #dfdfdf;
 }
 
@@ -410,6 +410,38 @@ progress[value]::-moz-progress-value {
   background-color: var(--color-green);
   border-radius: .2rem;
   border: none;
+}
+
+nav[title="progress"] ol {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+  margin-bottom: 1.6rem;
+}
+
+nav[title="progress"] a {
+  text-decoration: none;
+}
+
+nav[title="progress"] li{
+  position: relative;
+  text-align: center;
+  font-size: var(--text-xs)
+}
+
+nav[title="progress"] li::before {
+  content: attr(value);
+  position: absolute;
+  top: -3.4rem;
+  left: calc(50% - 1.1rem);
+  font-size: var(--text-xs);
+  line-height: var(--text-xs);
+  padding: 0.55rem .75rem;
+  background: var(--color-grey);
+  color: var(--color-white);
+  border-radius: 100%;
 }
 
 /*---------------
