@@ -88,7 +88,7 @@ p + p {
 }
 
 a {
-  pointer: hand;
+  cursor: pointer;
   color: currentColor;
 }
 
@@ -207,10 +207,39 @@ form[name="login"] > button {
 form[name="login"] > label[for*="stay"] {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 form[name="login"] > label[for*="stay"] > input {
-  margin-right: .65rem;
+  display: none;
+}
+
+form[name="login"] > label[for*="stay"] > input + span {
+  display:inline-block;
+  width:var(--text-body);
+  height:var(--text-body);
+  margin-right: 1rem;
+  background: #6A7591;
+  opacity: .5;
+  border-radius: .25rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+form[name="login"] > label[for*="stay"] > input + span::before {
+  content: '✔';
+  font-size: var(--text-small);
+  color: var(--color-beige);
+  position: relative;
+  top: -9px;
+  left: 4px;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+form[name="login"] > label[for*="stay"] > input:checked + span::before,
+form[name="login"] > label[for*="stay"] > input:checked + span {
+  opacity: 1;
 }
 
 form[name="login"] > button {
