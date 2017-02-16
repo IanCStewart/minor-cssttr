@@ -27,7 +27,7 @@
         <label for="field-password">Password</label>
         <input type="password" id="field-password" name="field-password" required>
 
-        <label for="field-stay-logged-in"><input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in"> Stay logged in</label>
+        <label for="hamburger"><input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in"><span></span> Stay logged in</label>
 
         <a href="#">Forgot password</a>
 
@@ -35,8 +35,10 @@
 
       </form>
     </div>
-    <div>
+    <div class="side-nav">
       <h2>Navigation Component</h2>
+      <input type="checkbox" id="hamburger" name="hamburger">
+      <label for="hamburger">🍔</label>
       <nav>
 
         <ul>
@@ -98,14 +100,14 @@
         <progress value="0.25" max="1">25%</progress>
 
         <ol>
-          <li>
+          <li value="1">
             <a href="/cart">Cart</a>
           </li>
-          <li>
+          <li value="2">
             <a href="#main-content" aria-label="Address, current step">Address</a>
           </li>
-          <li>Payment</li>
-          <li>Confirm</li>
+          <li value="3">Payment</li>
+          <li value="4">Confirm</li>
         </ol>
 
       </nav>
@@ -171,6 +173,7 @@
           </section>
         </article>
         <form action="/" method="post">
+          <label for="field-message">Message input</label>
           <textarea name="field-message" placeholder="Type something..."></textarea>
           <button type="submit">Send</button>
         </form>
