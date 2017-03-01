@@ -208,11 +208,7 @@ nav li > ul a:focus {
 /*-- Media Items --*/
 .media-items {
   padding: 2.6rem 1.6rem;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -230,14 +226,9 @@ nav li > ul a:focus {
   position: relative;
   max-width: 40rem;
   max-height: 25rem;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   justify-content: center;
-  -ms-align-items: center;
   align-items: center;
   overflow: hidden;
   margin: 1.6rem;
@@ -257,11 +248,7 @@ nav li > ul a:focus {
   left: 0;
   bottom: 0;
   right: 0;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(to bottom right,hsla(0, 0%, 100%, .5),hsla(214, 50%, 50%, .5));
@@ -294,8 +281,6 @@ nav li > ul a:focus {
   bottom: 0;
   left: 0;
   display: none;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -304,18 +289,12 @@ nav li > ul a:focus {
 }
 
 #login:target {
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
 }
 
 form[name="login"] {
   position: relative;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   max-width: 30rem;
@@ -366,21 +345,19 @@ form[name="login"] > button {
   margin: 0 0 1rem 0;
 }
 
-form[name="login"] > label[for*="stay"] {
-  display: -webkit-flex;
-  display: -ms-flex;
+label[for*="stay-logged"] {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-form[name="login"] > label[for*="stay"] > input {
+label[for*="stay-logged"] > input {
   opacity: 0;
   z-index: -9999;
   position: absolute;
 }
 
-form[name="login"] > label[for*="stay"] > input + span {
+label[for*="stay-logged"] > input + span {
   display:inline-block;
   width:var(--text-body);
   height:var(--text-body);
@@ -392,7 +369,7 @@ form[name="login"] > label[for*="stay"] > input + span {
   transition: all .3s ease-in-out;
 }
 
-form[name="login"] > label[for*="stay"] > input + span::before {
+label[for*="stay-logged"] > input + span::before {
   content: '✔';
   font-size: var(--text-small);
   color: var(--color-beige);
@@ -403,12 +380,12 @@ form[name="login"] > label[for*="stay"] > input + span::before {
   transition: all .3s ease-in-out;
 }
 
-form[name="login"] > label[for*="stay"] > input:checked + span::before,
-form[name="login"] > label[for*="stay"] > input:checked + span {
+label[for*="stay-logged"] > input:checked + span::before,
+label[for*="stay-logged"] > input:checked + span {
   opacity: 1;
 }
 
-form[name="login"] > label[for*="stay"] > input:focus + span {
+label[for*="stay-logged"] > input:focus + span {
   outline: 3px solid var(--color-blue);
 }
 
@@ -436,7 +413,7 @@ form[name="login"] > button[name="close-login"]:focus {
   background: var(--color-blue);
 }
 
-form[name="login"]:invalid > button[type="submit"] {
+form[name="login"]:invalid button[type="submit"] {
   background: var(--color-diabled);
 }
 
