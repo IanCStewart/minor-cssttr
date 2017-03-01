@@ -30,6 +30,7 @@ html {
   --color-green: #516B5E;
   --color-pink: #DD7F77;
   --color-beige: #F8F3DF;
+  --color-diabled: #575654;
   --color-background: hsla(213, 16%, 22%, .75);
   --main-shadow: 0 0 1.5rem 0 var(--color-grey);
   --text-large: calc(var(--text-body) * 2.25);
@@ -433,4 +434,24 @@ form[name="login"] > button[name="close-login"]:hover,
 form[name="login"] > button[name="close-login"]:active,
 form[name="login"] > button[name="close-login"]:focus {
   background: var(--color-blue);
+}
+
+form[name="login"]:invalid > button[type="submit"] {
+  background: var(--color-diabled);
+}
+
+form[name="login"] input:not([type="checkbox"]) {
+  border: 2px solid;
+}
+
+form[name="login"]:invalid input:not([type="checkbox"]) {
+  border-color: var(--color-pink);
+}
+
+form[name="login"] input:not([type="checkbox"]):valid {
+  border-color: var(--color-green);
+}
+
+form[name="login"]:valid {
+  background: linear-gradient(to bottom right,hsla(150, 14%, 32%, .85),hsla(213, 16%, 22%, .85));
 }
