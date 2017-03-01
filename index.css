@@ -224,19 +224,20 @@ nav li > ul a:focus {
 
 .media-items article {
   position: relative;
-  max-width: 40rem;
-  max-height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   margin: 1.6rem;
   transition: all .3s ease-in-out;
 }
 
 .media-items img {
+  min-width: 20rem;
   width: 100%;
+  max-width: 40rem;
+  height: 25rem;
+  object-fit: cover;
 }
 
 .media-items a {
