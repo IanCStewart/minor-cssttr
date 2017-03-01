@@ -190,7 +190,8 @@ nav ul a {
   transition: .3s all ease-in-out;
 }
 
-nav ul a:hover {
+nav ul a:hover,
+nav ul a:focus {
   background: #dfdfdf;
 }
 
@@ -198,7 +199,8 @@ nav li > ul a {
   padding-left: 3rem;
 }
 
-nav li > ul a:hover {
+nav li > ul a:hover,
+nav li > ul a:focus {
   background: #efefef;
 }
 
