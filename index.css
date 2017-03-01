@@ -21,6 +21,8 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
 }
 
 :root {
@@ -45,11 +47,6 @@ body {
   width: 100vw;
   height: 100%;
   margin: 0;
-}
-
-* {
-  font-family: 'Lato', sans-serif;
-  font-weight: normal;
 }
 
 h1,
@@ -432,4 +429,41 @@ form[name="login"] input:not([type="checkbox"]):valid {
 
 form[name="login"]:valid {
   background: linear-gradient(to bottom right,hsla(150, 14%, 32%, .85),hsla(213, 16%, 22%, .85));
+}
+
+/*-- Picture with text --*/
+.picture-with-text {
+  background: linear-gradient(to bottom right,#0D2C3F,#0EBCE9);
+  color: var(--color-white);
+}
+
+.picture-with-text h2,
+.picture-with-text p {
+  color: currentColor;
+}
+
+.picture-with-text figure {
+  margin: 0;
+  padding: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.picture-with-text img {
+  width: 100%;
+  max-width: 40rem;
+  align-self: flex-start;
+}
+
+.picture-with-text figcaption {
+  max-width: 30rem;
+  align-self: center;
+}
+
+.picture-with-text footer {
+  margin-top: .5rem;
+  font-size: var(--text-xs);
+  text-align: right;
+  opacity: .7;
 }
