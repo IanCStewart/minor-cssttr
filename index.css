@@ -284,3 +284,153 @@ nav li > ul a:focus {
   -webkit-backdrop-filter: blur(5px);
   opacity: 1;
 }
+
+/*-- Login -- */
+#login {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+#login:target {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+form[name="login"] {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  max-width: 30rem;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right,hsla(213, 16%, 2%, .85),hsla(213, 16%, 22%, .85));
+  color: var(--color-white);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+form[name="login"] h2 {
+  color: currentColor;
+  text-transform: uppercase;
+  position: relative;
+}
+
+form[name="login"] h2::after {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  background: var(--color-blue);
+}
+
+form[name="login"] > label,
+form[name="login"] > a,
+form[name="login"] > button,
+form[name="login"] > input {
+  text-transform: capitalize;
+  padding: .65rem;
+  font-size: var(--text-body);
+}
+
+form[name="login"] > label {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+form[name="login"] > input,
+form[name="login"] > button {
+  background: #6A7591;
+  color: inherit;
+  border: 0;
+  border-radius: .25rem;
+  margin: 0 0 1rem 0;
+}
+
+form[name="login"] > label[for*="stay"] {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form[name="login"] > label[for*="stay"] > input {
+  opacity: 0;
+  z-index: -9999;
+  position: absolute;
+}
+
+form[name="login"] > label[for*="stay"] > input + span {
+  display:inline-block;
+  width:var(--text-body);
+  height:var(--text-body);
+  margin-right: 1rem;
+  background: #6A7591;
+  opacity: .5;
+  border-radius: .25rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+form[name="login"] > label[for*="stay"] > input + span::before {
+  content: '✔';
+  font-size: var(--text-small);
+  color: var(--color-beige);
+  position: relative;
+  top: -9px;
+  left: 4px;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+form[name="login"] > label[for*="stay"] > input:checked + span::before,
+form[name="login"] > label[for*="stay"] > input:checked + span {
+  opacity: 1;
+}
+
+form[name="login"] > label[for*="stay"] > input:focus + span {
+  outline: 3px solid var(--color-blue);
+}
+
+form[name="login"] > button {
+  background: var(--color-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--text-body);
+  margin: 2rem 0 0 0;
+}
+
+form[name="login"] > button[name="close-login"] {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border-radius: 50%;
+  margin: 0;
+  z-index: +1;
+}
+
+form[name="login"] > button[name="close-login"]:hover,
+form[name="login"] > button[name="close-login"]:active,
+form[name="login"] > button[name="close-login"]:focus {
+  background: var(--color-blue);
+}
