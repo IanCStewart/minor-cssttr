@@ -521,3 +521,109 @@ fieldset label:hover {
 input[name="rating"]:checked + label {
   filter: grayscale(0);
 }
+
+/*-- chat --*/
+.chat {
+  font-size: var(--text-body);
+  background: linear-gradient(to bottom right,#CEEBD6,#FDDAC7);
+  padding: 1.6rem 0;
+}
+
+.chat h2,
+.chat > article,
+.chat form {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.chat h2 {
+  color: var(--color-white);
+  background: var(--color-grey);
+  width:100%;
+  max-width: 70rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.chat > article {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: url('./assets/img/chat-background.jpg');
+  box-sizing: border-box;
+}
+
+.chat > article > section {
+  margin: 1rem;
+  max-width: 80%;
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-radius: .5rem;
+  font-size: var(--text-body);
+  align-self: flex-start;
+}
+
+.chat header {
+  padding: .5rem 0 .5rem;
+  margin-bottom: .5rem;
+  background: #86aed6;
+  border-radius: .5rem .5rem 0 0;
+  font-size: 1.2rem;
+}
+
+.chat p {
+  color: currentColor;
+  padding: 0 1rem;
+  font-size: inherit;
+}
+
+.chat section.other-message {
+  background: #5aa86f;
+  padding-bottom: .5rem;
+  align-self: flex-end;
+}
+
+.chat section.other-message header {
+  background: #a2d686;
+}
+
+.chat footer {
+  padding-bottom: .5rem;
+  text-align: right;
+  opacity: .75;
+  font-size: 1.2rem;
+}
+
+.chat form {
+  height: calc(var(--text-body) + 2rem);
+  font-size: var(--text-body);
+  font-weight: light;
+  position: relative;
+}
+
+.chat label {
+  display: none;
+}
+
+.chat textarea {
+  resize: none;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  padding: .8rem;
+  padding-right: 4rem;
+  font-size: inherit;
+  box-sizing: border-box;
+}
+
+.chat button {
+  position: absolute;
+  background: none;
+  border: 0;
+  color: var(--color-blue);
+  font-size: inherit;
+  right: 1rem;
+  top: .8rem;
+}

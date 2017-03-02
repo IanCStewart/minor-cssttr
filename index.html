@@ -136,6 +136,40 @@
         </figcaption>
       </figure>
     </section>
+    <section class="chat">
+      <h2>News support</h2>
+      <article>
+        <section class="my-message">
+          <header>
+            <p>Posted on <time datatime="2015-01-22T10:25">10:25 AM</time> by you</p>
+          </header>
+          <p>Can i ask you something?</p>
+          <footer>
+            <p data-status="READ">Has been read</p>
+          </footer>
+        </section>
+        <section class="other-message">
+          <header>
+            <p>Posted on <time datatime="2017-02-03T14:19">2:19 PM</time> by John</p>
+          </header>
+          <p>Hey! Sorry I was busy</p>
+        </section>
+        <section class="my-message">
+          <header>
+            <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
+          </header>
+          <p>I sent that 2 years ago...</p>
+          <footer>
+            <p data-status="DELIVERED">Has been delivered</p>
+          </footer>
+        </section>
+      </article>
+      <form action="/" method="post">
+        <label for="field-message">Message input</label>
+        <textarea name="field-message" placeholder="Type something..."></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
   </main>
 </body>
 </html>
