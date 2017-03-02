@@ -443,11 +443,12 @@ form[name="login"]:valid {
 }
 
 .picture-with-text figure {
-  margin: 0;
+  margin: 0 auto;
   padding: 1.6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 80rem;
 }
 
 .picture-with-text img {
