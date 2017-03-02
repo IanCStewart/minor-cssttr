@@ -632,3 +632,74 @@ input[name="rating"]:checked + label {
   right: 1rem;
   top: .8rem;
 }
+
+/*-- loading --*/
+.loading {
+  position: relative;
+  background: hsl(20, 40%, 90%);
+  background-image:
+    linear-gradient(to bottom right,rgba(206, 235, 214, .75),rgba(253, 218, 199, .75)),
+    url(https://unsplash.it/1920/1080/?random=7);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(90deg, #CE2533 11px, transparent 0),
+    linear-gradient(90deg, #F8F6DF 23px, transparent 0),
+    linear-gradient(90deg, #576371 41px, transparent 0);
+  background-size: 41px 100%, 61px 100%, 83px 100%;
+  opacity: .75;
+  mix-blend-mode: color-burn;
+}
+
+.loading h2 {
+  margin: 0;
+  margin-bottom: 1.6rem;
+  mix-blend-mode: multiply;
+}
+
+.loading span {
+  width: 5rem;
+  height: 5rem;
+  border: 1rem solid #7512FF;
+  border-radius: 50%;
+  border-bottom: 1rem solid #FF9500;
+  animation: bounce 5s infinite;
+  -webkit-animation: bounce 5s infinite alternate;
+  -moz-animation: bounce 5s infinite alternate;
+  -o-animation: bounce 5s infinite alternate;
+  mix-blend-mode: multiply;
+}
+
+@-webkit-keyframes bounce {
+ 0%, 100% {-webkit-transform: rotate(0);}
+ 40% {-webkit-transform: rotate(720deg);}
+}
+
+@-moz-keyframes bounce {
+ 0%, 100% {-moz-transform: rotate(0);}
+ 40% {-moz-transform: rotate(720deg);}
+}
+
+@-o-keyframes bounce {
+ 0%, 100% {-o-transform: rotate(0);}
+ 40% {-o-transform: rotate(720deg);}
+}
+@keyframes bounce {
+ 0%, 100% {transform: rotate(0);}
+ 40% {transform: rotate(720deg);}
+}
