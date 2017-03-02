@@ -289,7 +289,7 @@ form[name="login"] > button {
   left: 26.5rem;
 }
 
-nav {
+.side-nav nav {
   align-self: flex-start;
   position: relative;
   left: -28.5rem;
@@ -307,7 +307,7 @@ nav {
   left: -2.5rem;
 }
 
-nav ul a {
+.side-nav nav ul a {
   padding: 1.6rem;
   display: block;
   text-decoration: none;
@@ -315,15 +315,15 @@ nav ul a {
   transition: .3s all ease-in-out;
 }
 
-nav ul a:hover {
+.side-nav nav ul a:hover {
   background: #dfdfdf;
 }
 
-nav li > ul a {
+.side-nav nav li > ul a {
   padding-left: 3rem;
 }
 
-nav li > ul a:hover {
+.side-nav nav li > ul a:hover {
   background: #efefef;
 }
 
@@ -332,7 +332,7 @@ nav li > ul a:hover {
     display: none;
   }
 
-  nav {
+  .side-nav nav {
     left: -2.5rem;
   }
 }
@@ -483,7 +483,7 @@ nav[title="progress"] li{
 nav[title="progress"] li::before {
   content: attr(value);
   position: absolute;
-  top: -3.4rem;
+  top: -4.4rem;
   left: calc(50% - 1.1rem);
   font-size: var(--text-xs);
   line-height: var(--text-xs);
