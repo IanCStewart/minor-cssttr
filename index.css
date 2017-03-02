@@ -467,3 +467,56 @@ form[name="login"]:valid {
   text-align: right;
   opacity: .7;
 }
+
+/*-- Rating -- */
+fieldset {
+  margin: 1rem 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  border-top: 1px dashed var(--color-white);
+  border-bottom: 1px dashed var(--color-white);
+}
+
+fieldset > legend {
+  position: relative;
+  top: 1rem;
+  float: left;
+  width: 100%;
+  margin-left: 0;
+  font-size: var(--text-xs);
+  box-sizing: border-box;
+}
+
+fieldset > section {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+label[for^="rating"] {
+  text-align: center;
+  font-size: var(--text-medium);
+  max-width: 7rem;
+  color: var(--color-background);
+  flex: 1;
+  filter: grayscale(100%);
+  transition: .3s all ease-in-out;
+}
+
+input[name="rating"] {
+  opacity: 0;
+  z-index: -9999;
+  position: absolute;
+}
+
+fieldset label:hover {
+  filter: grayscale(70%);
+}
+
+input[name="rating"]:checked + label {
+  filter: grayscale(0);
+}
