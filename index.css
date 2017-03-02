@@ -164,7 +164,9 @@ nav {
   color: var(--color-grey);
   opacity: .9;
   transition: all .3s ease-in-out;
-  z-index: 1
+  z-index: 1;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .side-nav input:focus + label {
@@ -177,6 +179,8 @@ nav {
 
 .side-nav input:checked + label svg {
   transform: rotate(90deg);
+  width: 100%;
+  height: 100%;
 }
 
 .side-nav input:checked ~ nav {
@@ -675,10 +679,22 @@ input[name="rating"]:checked + label {
 }
 
 .loading h2 {
+  position: relative;
   margin: 0;
   margin-bottom: 1.6rem;
-  mix-blend-mode: multiply;
   padding: 0 1rem;
+}
+
+.loading h2::before {
+  position: absolute;
+  content: '';
+  top: -1.5rem;
+  left: 2.5rem;
+  bottom: 1.5rem;
+  right: 0;
+  background: var(--color-pink);
+  opacity: .7;
+  mix-blend-mode: multiply;
 }
 
 .loading span {
