@@ -19,9 +19,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Ampersand';
+  src: local('Zapfino'),
+    local('Comic Sans MS');
+  unicode-range: U+26;
+}
+
 html {
   font-size: 62.5%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ampersand', 'Lato', sans-serif;
   font-weight: normal;
 }
 
@@ -648,6 +655,7 @@ input[name="rating"]:checked + label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .loading::before {
@@ -670,6 +678,7 @@ input[name="rating"]:checked + label {
   margin: 0;
   margin-bottom: 1.6rem;
   mix-blend-mode: multiply;
+  padding: 0 1rem;
 }
 
 .loading span {
